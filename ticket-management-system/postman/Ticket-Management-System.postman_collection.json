@@ -1,0 +1,117 @@
+{
+  "info": {
+    "name": "Ticket Management System",
+    "description": "Postman collection for testing Spring Boot ticket support APIs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Ticket",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Integration service timeout\",\n  \"description\": \"Middleware service times out during downstream API call\",\n  \"priority\": \"HIGH\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tickets",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "tickets"]
+        }
+      }
+    },
+    {
+      "name": "Get All Tickets",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/tickets",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "tickets"]
+        }
+      }
+    },
+    {
+      "name": "Get Ticket By ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/tickets/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "tickets", "1"]
+        }
+      }
+    },
+    {
+      "name": "Update Ticket Status",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"RESOLVED\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tickets/1/status",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "tickets", "1", "status"]
+        }
+      }
+    },
+    {
+      "name": "Update Ticket Priority",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"priority\": \"LOW\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tickets/1/priority",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "tickets", "1", "priority"]
+        }
+      }
+    },
+    {
+      "name": "Delete Ticket",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/api/tickets/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "tickets", "1"]
+        }
+      }
+    }
+  ]
+}
